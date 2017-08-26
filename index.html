@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dialog Ninja</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="page-wrap">
+       <div class="circle"></div>
+<!--
+               <div class="logo">
+                   <img src="" alt="">
+                   <span>Dialog Ninja</span>
+               </div>
+-->
+       <div class="content-wrap">
+          <section class="main">
+               <div class="container">
+                   <h1>Уникальный сервис распознавания звонков</h1>
+                   <div class="intro">
+                       Помогает компаниям узнавать их клиентов, анализровать и систематизировать всю телефонию с использованием нейросети
+                   </div>
+                   <div class="subscribe">
+                       Подпишись и будь в курсе запуска бета-версии сервиса
+                   </div>
+                   <form action="javascript:void(0);">
+                       <button id="submit-button" class="btn" data-toggle="modal" data-target="#feedback">Подписаться</button>
+                       <input type="email" placeholder="Ваш Email" required>
+                   </form>
+               </div>
+           </section>
+
+           <footer class="footer">
+               <div class="container">
+                   <div class="line"></div>
+                   <nav class="social-media">
+                       <a href="#">Vkontakte</a>
+                       <a href="#">Facebook</a>
+                       <a href="#">Обратная связь</a>
+                   </nav>
+                   <p>Россия, г.Москва, ул. Новослободская, 11, +7 (495) 123-321-1</p>
+                   <p>Dialog Ninja © 2017 Все права защищены</p>
+               </div>
+
+           </footer> 
+       </div>       
+    </div>
+
+<!-- MODAL -->
+
+<div class="modal fade" id="feedback">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body success">
+        <div class="icon">
+            <div class="check">
+                <svg width="46.5" height="43.5" >
+                   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                       <g id="Success" transform="translate(-697.000000, -328.000000)" stroke-width="2" stroke="#00BF9B">
+                           <g class="check-mark" transform="translate(670.000000, 298.000000)">
+                                <polyline id="check" points="28 54.5 41 72 74.5 31"></polyline>
+                           </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>    
+        <div class="modal-title">Подписка оформлена</div>
+        <p>В ближайшее время мы с Вами свяжемся</p>
+      </div>
+      
+      <div class="modal-body failure">
+          <div class="icon">
+            <div class="cross">
+                <svg width="35.5" height="35.5" >
+                   <g transform="translate(-702.000000, -331.000000)" stroke="#FF0041" stroke-width="2">
+                        <g transform="translate(558.000000, 298.000000)">
+                            <g transform="translate(112.000000, 0.000000)">
+                                <g transform="translate(33.000000, 34.000000)">
+                                    <path class="first" d="M0,31.6818182 L33.6136364,0" transform="translate(16.806818, 15.840909) scale(-1, 1) translate(-16.806818, -15.840909) "></path>
+                                    <path class="second" d="M0,31.6818182 L33.6136364,0"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="modal-title">Ошибка подписки</div>
+        <p>Попробуйте еще раз либо в другое время</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+    $(window).ready(function() {
+        var flag = 0;
+        $('#submit-button').click(function() {            
+            if (flag === 0) {
+                $('.modal-body.success').addClass('show');
+                $('.modal-body.failure').removeClass('show');
+                flag = 1;
+            } else {
+                $('.modal-body.success').removeClass('show');
+                $('.modal-body.failure').addClass('show');
+                flag = 0;
+            }
+        });
+    });
+</script>    
+</body>
+</html>

@@ -1,0 +1,263 @@
+*:focus {
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+  background: #260038;
+}
+
+.page-wrap {
+  background: linear-gradient(to top, #3D005B, #000000);
+  background-size: 200% 200%;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  animation: bg 4s infinite;
+}
+
+@keyframes bg {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -25rem -25rem;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.circle {
+  background: url("../img/circle.png") no-repeat;
+  background-position: center 250%;
+  width: inherit;
+  height: inherit;
+  transition: opacity .3s ease-in;
+  z-index: 10;
+}
+
+.circle img {
+  width: 690px;
+  height: 680px;
+}
+
+@media (max-width: 540px) {
+  .circle {
+    opacity: .5;
+  }
+}
+
+.content-wrap {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.main,
+.footer {
+  position: relative;
+  z-index: 100;
+}
+
+.main {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.main h1 {
+  font-size: 3.2rem;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.main .intro {
+  font-size: 2rem;
+  line-height: 2.9rem;
+  color: #FFFFFF;
+  margin: 0 auto 25px auto;
+  max-width: 650px;
+}
+
+.main .subscribe {
+  font-size: 2rem;
+  line-height: 1.9rem;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form .btn {
+  background-color: #FF0041;
+  padding: 14px 15px;
+  color: #000000;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+form input {
+  padding: 13px 15px;
+  color: #000000;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  border: none;
+  width: 260px;
+  transition: .3s ease-in;
+}
+
+form input:focus {
+  box-shadow: 0 0 10px #FFFFFF;
+}
+
+form input::placeholder {
+  color: #000000;
+}
+
+.footer {
+  padding-bottom: 50px;
+}
+
+.footer .line {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(143, 111, 159, 0.5), rgba(255, 255, 255, 0.01));
+  width: 100%;
+  height: 1px;
+  margin-bottom: 25px;
+}
+
+.footer .social-media {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer .social-media a {
+  padding: 12px;
+  font-size: 1.4rem;
+  color: #8F6F9F;
+}
+
+.footer p {
+  font-size: 1.4rem;
+  color: #8F6F9F;
+  text-align: center;
+}
+
+.modal {
+  padding-left: 0 !important;
+}
+
+.modal-dialog {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  max-width: 540px;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    min-height: calc(100vh - 20px);
+  }
+}
+
+.modal-content {
+  padding: 90px 0;
+  background-color: #2C0E3A;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.modal-content .success {
+  display: none;
+}
+
+.modal-content .success .icon {
+  border: 2px solid #00BF9B;
+}
+
+.modal-content .success .check {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -22.5px;
+}
+
+.modal-content .success .check-mark {
+  stroke-dasharray: 75;
+  stroke-dashoffset: 75;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+}
+
+.modal-content .success .modal-title {
+  color: #00BF9B;
+}
+
+.modal-content .failure {
+  display: none;
+}
+
+.modal-content .failure .icon {
+  border: 2px solid #FF0041;
+}
+
+.modal-content .failure .cross {
+  stroke: #FF0041;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -20px;
+  transform: rotate(180deg);
+}
+
+.modal-content .failure .cross .first {
+  stroke-dasharray: 75;
+  stroke-dashoffset: 75;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+}
+
+.modal-content .failure .cross .second {
+  stroke-dasharray: 75;
+  stroke-dashoffset: 75;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.65s forwards;
+}
+
+.modal-content .failure .modal-title {
+  color: #FF0041;
+}
+
+.modal-content .icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 25px auto;
+  position: relative;
+}
+
+.modal-content .modal-title {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.show {
+  display: block !important;
+}
