@@ -6,22 +6,40 @@
     <title>Dialog Ninja</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/ninja.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="page-wrap">
-       <div class="circle"></div>
-<!--
-               <div class="logo">
-                   <img src="" alt="">
+       <div class="circle"></div>  
+       <div class="heading">
+            <div class="container"> 
+               <div class="logo">                        
+                   <?xml version="1.0" encoding="UTF-8"?>
+                    <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+                        <title>logo</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Land" transform="translate(-261.000000, -16.000000)" fill="#000000">
+                                <g id="logoRedblack" transform="translate(251.000000, 0.000000)">
+                                    <g id="Group-3">
+                                        <path d="M37,31.5335548 C36.9993235,32.1894847 36.597951,32.7848812 35.9934118,33.0367276 C33.0264118,34.2729206 29.4077451,35 25.5,35 C21.5922549,35 17.9735882,34.2729206 15.0065882,33.0367276 C14.402049,32.7848812 14.0006765,32.1894847 14,31.5335548 L14,31.5224871 C14,28.9491366 14.8426569,26.5731975 16.266402,24.6555511 C16.6718333,24.1096204 17.3749118,23.8832975 18.0315392,24.0578959 C20.3107941,24.6636824 22.8380882,25.0020375 25.5,25.0020375 C28.1619118,25.0020375 30.6892059,24.6636824 32.9684608,24.0578959 C33.6250882,23.8832975 34.3281667,24.1096204 34.733598,24.6555511 C36.1573431,26.5731975 37,28.9491366 37,31.5224871 L37,31.5335548 Z M19.8123897,29.16652 C19.3298474,29.4158667 19,29.9194962 19,30.5001078 C19,31.3285191 19.6714809,32 20.4998922,32 C21.3283035,32 22,31.3285191 22,30.5001078 C22,30.1308312 21.8665297,29.7926948 21.6452043,29.5313138 L24,30 L23.7901901,28.884009 L18.1316606,27 L17,28.6067568 L19.8123897,29.16652 Z M41.3191489,32 C41.3191489,34.6028986 40.7070638,37.058087 39.6276879,39.2303768 C39.9007092,41.6150725 40.5454752,44.3598841 42,46.3768116 C42,46.3768116 38.5744113,48.1926957 33.7755461,45.686029 C31.4086809,47.1545507 28.6308085,48 25.6595745,48 C17.0111773,48 10,40.8366377 10,32 C10,23.1635942 17.0111773,16 25.6595745,16 C34.3079716,16 41.3191489,23.1635942 41.3191489,32 Z M32,30.5001078 C32,29.6716965 31.3283035,29 30.4998922,29 C29.6714809,29 29,29.6716965 29,30.5001078 C29,31.3285191 29.6714809,32 30.4998922,32 C31.3283035,32 32,31.3285191 32,30.5001078 Z M27,29 L34,27.7367776 L32.5999095,26 L27.2098099,27.988156 L27,29 Z" id="logo"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+    </svg>
                    <span>Dialog Ninja</span>
-               </div>
--->
+                </div> 
+           </div>
+       </div>     
        <div class="content-wrap">
           <section class="main">
-               <div class="container">
+               <div class="container">                  
                    <h1>Уникальный сервис распознавания звонков</h1>
                    <div class="intro">
                        Помогает компаниям узнавать их клиентов, анализровать и систематизировать всю телефонию с использованием нейросети
@@ -31,7 +49,7 @@
                    </div>
                    <form action="javascript:void(0);">
                        <button id="submit-button" class="btn" data-toggle="modal" data-target="#feedback">Подписаться</button>
-                       <input type="email" placeholder="Ваш Email" required>
+                       <input id="form-input" type="text" placeholder="Ваш Email">
                    </form>
                </div>
            </section>
@@ -102,8 +120,16 @@
 
 <script>
     $(window).ready(function() {
+
         var flag = 0;
-        $('#submit-button').click(function() {            
+        $('#submit-button').click(function() {  
+//            if ( $('#form-input').val() == '' )  {
+//                $('#submit-button').attr('data-toggle', 'modal');
+//                $('#submit-button').attr('data-target', '#feedback');
+//            } else {
+//                $('#submit-button').removeAttr('data-toggle');
+//                $('#submit-button').removeAttr('data-target');
+//            }
             if (flag === 0) {
                 $('.modal-body.success').addClass('show');
                 $('.modal-body.failure').removeClass('show');
