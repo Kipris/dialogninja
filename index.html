@@ -274,8 +274,8 @@
                        Подпишись и будь в курсе запуска бета-версии сервиса
                    </div>
                    <form action="javascript:void(0);">
-                       <button id="submit-button" class="btn" data-toggle="modal" data-target="#feedback">Подписаться</button>
-                       <input id="form-input" type="text" placeholder="Ваш Email">
+                       <button id="submit-button" class="btn">Подписаться</button>
+                       <input id="form-input" placeholder="Ваш Email" type="email" required>
                    </form>
                </div>
            </section>
@@ -298,7 +298,7 @@
 
 <!-- MODAL -->
 
-<div class="modal fade" id="feedback">
+<div class="modal fade" id="feedback" data-backdrop="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body success">
@@ -346,26 +346,28 @@
 
 <script>
     $(window).ready(function() {
-
         var flag = 0;
-        $('#submit-button').click(function() {  
-//            if ( $('#form-input').val() == '' )  {
-//                $('#submit-button').attr('data-toggle', 'modal');
-//                $('#submit-button').attr('data-target', '#feedback');
-//            } else {
-//                $('#submit-button').removeAttr('data-toggle');
-//                $('#submit-button').removeAttr('data-target');
-//            }
-            if (flag === 0) {
-                $('.modal-body.success').addClass('show');
-                $('.modal-body.failure').removeClass('show');
-                flag = 1;
+        $('#submit-button').click(function() {            
+            if ( $('#form-input').val() == '') {
+                return 0;
             } else {
-                $('.modal-body.success').removeClass('show');
-                $('.modal-body.failure').addClass('show');
-                flag = 0;
-            }
+                $('#feedback').modal('show');
+                if (flag === 0) {
+                    $('.modal-body.success').addClass('show');
+                    $('.modal-body.failure').removeClass('show');
+                    flag = 1;
+                } else {
+                    $('.modal-body.success').removeClass('show');
+                    $('.modal-body.failure').addClass('show');
+                    flag = 0;
+                }
+            }            
         });
+        
+        $('.modal').click(function() {
+            $('#feedback').modal('hide');
+        });
+        
     });
 </script>    
 </body>

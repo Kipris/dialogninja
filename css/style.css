@@ -556,6 +556,7 @@ form input::placeholder {
         -ms-flex-order: -1;
             order: -1;
     margin-bottom: 20px;
+    text-align: center;
   }
   form input::-webkit-input-placeholder {
     text-align: center;
