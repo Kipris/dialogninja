@@ -18,9 +18,26 @@ html {
     background: $purple;
 }
 
-h1, div, a, button, input {
-    font-family: 'Ubuntu', sans-serif;
+h1, div, a, button, input, p {
+    font-family: 'Ubuntu', sans-serif;    
 }
+
+h1 {
+    font-weight: 300;
+}
+
+.intro,
+.subscribe {
+    font-weight: 500;
+}
+
+a, 
+button, 
+input, 
+p {
+    font-weight: 400;
+}
+
 
 .page-wrap {
     background: linear-gradient(to top, #3D005B, $black);

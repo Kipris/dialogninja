@@ -19,16 +19,31 @@
           transform: scale(0.5);
 }
 
+.shadow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  margin-top: -223px;
+  margin-left: -220.5px;
+  -webkit-animation: circle-animation 6.3s infinite;
+          animation: circle-animation 6.3s infinite;
+  opacity: 0;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
 .waves {
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   top: 50%;
   left: 50%;
   margin-top: -384.5px;
   margin-left: -407px;
   -webkit-animation: wave-animation 6.3s infinite;
           animation: wave-animation 6.3s infinite;
-  opacity: .3;
+  opacity: .5;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -160,47 +175,57 @@
 
 @-webkit-keyframes wave-animation {
   0% {
-    opacity: .3;
+    opacity: .5;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
   31.75% {
-    opacity: .5;
+    opacity: 1;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
   95.25% {
+    opacity: 1;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  97% {
     opacity: .5;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
   100% {
-    opacity: .3;
-    -webkit-transform: scale(0.2);
-            transform: scale(0.2);
+    opacity: .5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes wave-animation {
   0% {
-    opacity: .3;
+    opacity: .5;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
   31.75% {
-    opacity: .5;
+    opacity: 1;
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
   95.25% {
+    opacity: 1;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  97% {
     opacity: .5;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
   100% {
-    opacity: .3;
-    -webkit-transform: scale(0.2);
-            transform: scale(0.2);
+    opacity: .5;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -219,8 +244,24 @@ html {
   background: #260038;
 }
 
-h1, div, a, button, input {
+h1, div, a, button, input, p {
   font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.intro,
+.subscribe {
+  font-weight: 500;
+}
+
+a,
+button,
+input,
+p {
+  font-weight: 400;
 }
 
 .page-wrap {
