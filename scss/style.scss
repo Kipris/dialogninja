@@ -73,6 +73,12 @@ p {
         display: flex;   
         justify-content: center;
         align-items: center;
+//       a {
+//           display: flex; 
+           &:hover {
+               text-decoration: none;
+           }
+//       }
     } 
     span {
         margin-left: 10px;
@@ -283,6 +289,11 @@ form {
 }
 
 @media (max-width: 425px) {
+    .heading {
+        .logo {
+            margin: auto;
+        }
+    }
     form {
         display: flex;
         flex-direction: column;
