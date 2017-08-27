@@ -1,3 +1,215 @@
+.circle {
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+}
+
+.voice-circle {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  margin-top: -107.5px;
+  margin-left: -107.5px;
+  -webkit-animation: circle-animation 6.3s infinite;
+          animation: circle-animation 6.3s infinite;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.waves {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  margin-top: -384.5px;
+  margin-left: -407px;
+  -webkit-animation: wave-animation 6.3s infinite;
+          animation: wave-animation 6.3s infinite;
+  opacity: .3;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.dots {
+  transition: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dots .dot1,
+.dots .dot1-blur {
+  opacity: 0;
+  -webkit-animation: dot1-animation 6.3s infinite;
+          animation: dot1-animation 6.3s infinite;
+}
+
+.dots .dot2,
+.dots .dot2-blur {
+  opacity: 0;
+  -webkit-animation: dot2-animation 6.3s infinite;
+          animation: dot2-animation 6.3s infinite;
+}
+
+@-webkit-keyframes circle-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  31.75% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  95.25% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+@keyframes circle-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  31.75% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  95.25% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes dot1-animation {
+  0% {
+    opacity: 0;
+  }
+  31.75% {
+    opacity: 0;
+  }
+  95.25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot1-animation {
+  0% {
+    opacity: 0;
+  }
+  31.75% {
+    opacity: 0;
+  }
+  95.25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes dot2-animation {
+  0% {
+    opacity: 0;
+  }
+  31.75% {
+    opacity: 1;
+  }
+  95.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot2-animation {
+  0% {
+    opacity: 0;
+  }
+  31.75% {
+    opacity: 1;
+  }
+  95.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes wave-animation {
+  0% {
+    opacity: .3;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  31.75% {
+    opacity: .5;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  95.25% {
+    opacity: .5;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    opacity: .3;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  31.75% {
+    opacity: .5;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  95.25% {
+    opacity: .5;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+  }
+}
+
+@media (max-width: 425px) {
+  .circle {
+    height: 70vh;
+  }
+}
+
 *:focus {
   outline: none;
 }
@@ -10,7 +222,6 @@ html {
 .page-wrap {
   background: linear-gradient(to top, #3D005B, #000000);
   background-size: 200% 200%;
-  width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -42,20 +253,12 @@ html {
   }
 }
 
-.circle {
-  background: url("../img/circle.png") no-repeat;
-  background-position: center 1000%;
-  width: 100vw;
-  height: 100vh;
-  transition: opacity .3s ease-in;
-  z-index: 10;
-}
-
 .heading {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .heading .logo {
@@ -79,9 +282,8 @@ html {
 }
 
 .content-wrap {
-  position: absolute;
+  margin-top: -65px;
   width: 100%;
-  bottom: 0;
 }
 
 .main,
@@ -111,7 +313,7 @@ html {
 
 .main .subscribe {
   font-size: 2rem;
-  line-height: 1.9rem;
+  line-height: 2.9rem;
   color: #FFFFFF;
   margin-bottom: 25px;
 }
@@ -172,15 +374,12 @@ form input::placeholder {
   color: #000000;
 }
 
-.footer {
-  padding-bottom: 50px;
-}
-
 .footer .line {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(143, 111, 159, 0.5), rgba(255, 255, 255, 0.01));
   width: 100%;
   height: 1px;
-  margin-bottom: 25px;
+  max-width: 550px;
+  margin: 0 auto 25px auto;
 }
 
 .footer .social-media {
@@ -198,6 +397,10 @@ form input::placeholder {
   font-size: 1.4rem;
   color: #8F6F9F;
   text-align: center;
+}
+
+.footer p:last-child {
+  margin-bottom: 40px;
 }
 
 .modal {
@@ -331,26 +534,40 @@ form input::placeholder {
   display: block !important;
 }
 
-@media (max-width: 540px) {
-  .circle {
-    opacity: .5;
-    background-position: center 160%;
+@media (max-width: 425px) {
+  form {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .footer {
-    padding-bottom: 20px;
+  form .btn {
+    width: 100%;
   }
-}
-
-@media (max-width: 412px) {
-  .circle {
-    background-position: center 120%;
+  form input {
+    width: 100%;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-bottom: 20px;
+  }
+  form input::-webkit-input-placeholder {
+    text-align: center;
+  }
+  form input::-moz-placeholder {
+    text-align: center;
+  }
+  form input:-ms-input-placeholder {
+    text-align: center;
+  }
+  form input::placeholder {
+    text-align: center;
   }
 }
 
 @media (max-width: 320px) {
-  .circle {
-    background-position: center 90%;
-  }
   .main h1 {
     font-size: 2.4rem;
   }
@@ -360,12 +577,6 @@ form input::placeholder {
   }
   .main .subscribe {
     font-size: 1.6rem;
-  }
-  form .btn {
-    font-size: 1.3rem;
-  }
-  form input {
-    font-size: 1.3rem;
   }
   .footer .social-media a {
     padding: 6px;
