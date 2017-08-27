@@ -219,6 +219,10 @@ html {
   background: #260038;
 }
 
+h1, div, a, button, input {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .page-wrap {
   background: linear-gradient(to top, #3D005B, #000000);
   background-size: 200% 200%;
