@@ -21,7 +21,7 @@ html {
     background: linear-gradient(to top, #3D005B, $black);
     background-size: 200% 200%;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     position: relative;
     animation: bg 4s infinite;    
@@ -41,24 +41,11 @@ html {
 
 .circle {
     background: url('../img/circle.png') no-repeat;
-//    background-size: 80%;
-    background-position: center 250%;
-//    margin-top: -220px;
-    width: inherit;
-    height: inherit;
-//    position: absolute;
+    background-position: center 1000%;
+    width: 100vw;
+    height: 100vh;
     transition: opacity .3s ease-in;
     z-index: 10;
-    img {
-        width: 690px;
-        height: 680px;
-    }
-}
-
-@media (max-width: 540px) {
-    .circle {
-        opacity: .5;
-    } 
 }
 
 .heading {
@@ -275,6 +262,53 @@ form {
     display: block !important;
 }
 
+@media (max-width: 540px) {
+    .circle {
+        opacity: .5;
+        background-position: center 160%;
+    }
+    .footer {
+        padding-bottom: 20px;
+    }
+}
 
+@media (max-width: 412px) {
+    .circle {
+        background-position: center 120%;
+    }
+}
 
+@media (max-width: 320px) {
+    .circle {
+        background-position: center 90%;
+    }
+    .main {
+        h1 {
+            font-size: 2.4rem;
+        }
+        .intro {
+            font-size: 1.6rem;
+            line-height: 2.3rem;
+        }
+        .subscribe {
+            font-size: 1.6rem;
+        }
+        
+    }
+    form {
+        .btn  {
+            font-size: 1.3rem;
+        }
+        input {
+            font-size: 1.3rem;
+        }    
+    }
+    .footer {
+        .social-media {
+            a {
+               padding: 6px; 
+            }
+        }
+    }
+}
 

@@ -11,10 +11,23 @@ html {
   background: linear-gradient(to top, #3D005B, #000000);
   background-size: 200% 200%;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  animation: bg 4s infinite;
+  -webkit-animation: bg 4s infinite;
+          animation: bg 4s infinite;
+}
+
+@-webkit-keyframes bg {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -25rem -25rem;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 @keyframes bg {
@@ -31,22 +44,11 @@ html {
 
 .circle {
   background: url("../img/circle.png") no-repeat;
-  background-position: center 250%;
-  width: inherit;
-  height: inherit;
+  background-position: center 1000%;
+  width: 100vw;
+  height: 100vh;
   transition: opacity .3s ease-in;
   z-index: 10;
-}
-
-.circle img {
-  width: 690px;
-  height: 680px;
-}
-
-@media (max-width: 540px) {
-  .circle {
-    opacity: .5;
-  }
 }
 
 .heading {
@@ -60,9 +62,15 @@ html {
   width: 200px;
   height: 63px;
   background-color: #FF0041;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .heading span {
@@ -109,8 +117,12 @@ html {
 }
 
 form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form .btn {
@@ -135,6 +147,18 @@ form input {
 
 form input:focus {
   box-shadow: 0 0 10px #FFFFFF;
+}
+
+form input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+form input::-moz-placeholder {
+  color: #000000;
+}
+
+form input:-ms-input-placeholder {
+  color: #000000;
 }
 
 form input::placeholder {
@@ -175,9 +199,15 @@ form input::placeholder {
 
 .modal-dialog {
   min-height: calc(100vh - 60px);
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: auto;
   max-width: 540px;
 }
@@ -214,7 +244,8 @@ form input::placeholder {
 .modal-content .success .check-mark {
   stroke-dasharray: 75;
   stroke-dashoffset: 75;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+          animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
 }
 
 .modal-content .success .modal-title {
@@ -236,19 +267,23 @@ form input::placeholder {
   right: 0;
   top: 50%;
   margin-top: -20px;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .modal-content .failure .cross .first {
   stroke-dasharray: 75;
   stroke-dashoffset: 75;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
+          animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.35s forwards;
 }
 
 .modal-content .failure .cross .second {
   stroke-dasharray: 75;
   stroke-dashoffset: 75;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.65s forwards;
+  -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.65s forwards;
+          animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.65s forwards;
 }
 
 .modal-content .failure .modal-title {
@@ -273,6 +308,12 @@ form input::placeholder {
   color: #FFFFFF;
 }
 
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes stroke {
   100% {
     stroke-dashoffset: 0;
@@ -281,4 +322,45 @@ form input::placeholder {
 
 .show {
   display: block !important;
+}
+
+@media (max-width: 540px) {
+  .circle {
+    opacity: .5;
+    background-position: center 160%;
+  }
+  .footer {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 412px) {
+  .circle {
+    background-position: center 120%;
+  }
+}
+
+@media (max-width: 320px) {
+  .circle {
+    background-position: center 90%;
+  }
+  .main h1 {
+    font-size: 2.4rem;
+  }
+  .main .intro {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
+  .main .subscribe {
+    font-size: 1.6rem;
+  }
+  form .btn {
+    font-size: 1.3rem;
+  }
+  form input {
+    font-size: 1.3rem;
+  }
+  .footer .social-media a {
+    padding: 6px;
+  }
 }
